@@ -292,4 +292,186 @@ public class Consultas {
 
     }
 
+    public String getSql() {
+        return sql;
+    }
+
+    public void setSql(String sql) {
+        this.sql = sql;
+    }
+
+    public String[] getKilometraje() {
+        return kilometraje;
+    }
+
+    public void setKilometraje(String[] kilometraje) {
+        this.kilometraje = kilometraje;
+    }
+
+    public String[] getMotor() {
+        return motor;
+    }
+
+    public void setMotor(String[] motor) {
+        this.motor = motor;
+    }
+
+    public String[] getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String[] estado) {
+        this.estado = estado;
+    }
+
+    public String[] getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String[] marca) {
+        this.marca = marca;
+    }
+
+    public String[] getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String[] modelo) {
+        this.modelo = modelo;
+    }
+
+    public String[] getAnio() {
+        return anio;
+    }
+
+    public void setAnio(String[] anio) {
+        this.anio = anio;
+    }
+
+    public String[] getCombustible() {
+        return combustible;
+    }
+
+    public void setCombustible(String[] combustible) {
+        this.combustible = combustible;
+    }
+
+    public String[] getTransmision() {
+        return transmision;
+    }
+
+    public void setTransmision(String[] transmision) {
+        this.transmision = transmision;
+    }
+
+    public String[] getTimon() {
+        return timon;
+    }
+
+    public void setTimon(String[] timon) {
+        this.timon = timon;
+    }
+
+    public String[] getTraccion() {
+        return traccion;
+    }
+
+    public void setTraccion(String[] traccion) {
+        this.traccion = traccion;
+    }
+
+    public String[] getEstilo() {
+        return estilo;
+    }
+
+    public void setEstilo(String[] estilo) {
+        this.estilo = estilo;
+    }
+
+    public String[] getCilindros() {
+        return cilindros;
+    }
+
+    public void setCilindros(String[] cilindros) {
+        this.cilindros = cilindros;
+    }
+
+    public String[] getTrenManejo() {
+        return trenManejo;
+    }
+
+    public void setTrenManejo(String[] trenManejo) {
+        this.trenManejo = trenManejo;
+    }
+
+    public String[] getChasis() {
+        return chasis;
+    }
+
+    public void setChasis(String[] chasis) {
+        this.chasis = chasis;
+    }
+
+    public String[] getColor() {
+        return color;
+    }
+
+    public void setColor(String[] color) {
+        this.color = color;
+    }
+
+    public String[] getAsientos() {
+        return asientos;
+    }
+
+    public void setAsientos(String[] asientos) {
+        this.asientos = asientos;
+    }
+
+    public String[] getSubCategoria() {
+        return subCategoria;
+    }
+
+    public void setSubCategoria(String[] subCategoria) {
+        this.subCategoria = subCategoria;
+    }
+
+    public String[] getMonedaSimbolo() {
+        return monedaSimbolo;
+    }
+
+    public void setMonedaSimbolo(String[] monedaSimbolo) {
+        this.monedaSimbolo = monedaSimbolo;
+    }
+
+    public String[] getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String[] fecha) {
+        this.fecha = fecha;
+    }
+
+    public String[] getEstadoPublicacion() {
+        return estadoPublicacion;
+    }
+
+    public void setEstadoPublicacion(String[] estadoPublicacion) {
+        this.estadoPublicacion = estadoPublicacion;
+    }
+
+    public float[] getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(float[] precio) {
+        this.precio = precio;
+    }
+    
+    
+    
+    
+    
+    
+
 }

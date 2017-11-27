@@ -9,6 +9,7 @@ package pruebas;
 import archivos.ExportarCSV;
 import conexion.Conexion;
 import gestion.Consultas;
+import java.io.IOException;
 import java.sql.SQLException;
 
 /**
@@ -20,23 +21,29 @@ public class Pruebas {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws SQLException, IOException {
         // TODO code application logic here
         
-        Consultas e= new Consultas();
+        Consultas c= new Consultas();
         
-        e.iniciar();
+        c.iniciar();
         
-        e.completarCaracteristicas();
-        e.completarPrecios();
+        c.completarCaracteristicas();
+        c.completarPrecios();
         
-        e.mostrarVehiculos();
+        c.mostrarVehiculos();
         
+        ExportarCSV ex= new ExportarCSV();
+        
+       ex.exportarResultados(c.getSubCategoria(),c.getMarca(),c.getModelo(), c.getAnio(), 
+               c.getEstado(),c.getColor(), c.getCombustible(),c.getKilometraje(),c.getColor(), 
+               c.getAsientos(),c.getTransmision(), c.getTimon(),c.getTraccion(),c.getEstilo(), 
+               c.getCilindros(),c.getTrenManejo(),c.getChasis(),c.getPrecio(), 
+               c.getMonedaSimbolo(), c.getFecha(), c.getEstadoPublicacion());
         
         
        
-        
-        
+       
     }
     
 }
