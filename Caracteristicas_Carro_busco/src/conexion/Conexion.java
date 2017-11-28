@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package conexion;
 
 import com.mysql.jdbc.Connection;
@@ -11,41 +10,35 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-
-
 /**
  *
  * @author user
  */
 public class Conexion {
 
-   Connection con;
-   String gestor,bd,user,pass;
-    
+    Connection con;
+    String gestor, bd, user, pass;
+
     public Conexion() {
-        
-        gestor="db.todobusco.com";
-        bd="db_todobusco_prod";
-        user="u_tbusco_des";
-        pass="UNguphiehaes1a";
+
+        gestor = "db.todobusco.com";
+        bd = "db_todobusco_prod";
+        user = "u_tbusco_des";
+        pass = "UNguphiehaes1a";
     }
-    
-    
-    public void conectar() throws SQLException{
-        
-      String url="jdbc:mysql://"+gestor+":3306/"+bd;
-        
-      con=(Connection) DriverManager.getConnection(url,user,pass);
-      
-      
-      
+
+    public void conectar() throws SQLException {
+
+        String url = "jdbc:mysql://" + gestor + ":3306/" + bd;
+
+        con = (Connection) DriverManager.getConnection(url, user, pass);
+
     }
-    
-    
-    public void desconectar() throws SQLException{
-        
+
+    public void desconectar() throws SQLException {
+
         con.close();
-        
+
     }
 
     public Connection getCon() {
@@ -87,10 +80,5 @@ public class Conexion {
     public void setPass(String pass) {
         this.pass = pass;
     }
-    
-    
-    
-    
-    
-    
+
 }

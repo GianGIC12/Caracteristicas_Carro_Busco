@@ -23,7 +23,8 @@ public class ExportarCSV {
     public void exportarResultados(String subCategoria[], String marca[], String modelo[], String anio[],
             String estado[], String color[], String combustible[], String kilometraje[], String motor[], String asientos[],
             String transmision[], String timon[], String traccion[], String estilo[], String cilindros[], String trenManejo[],
-            String chasis[], float precio[], String monedaSimbolo[], String fecha[], String estadoPublicacion[]
+            String chasis[], float precio[], String monedaSimbolo[], String fecha[], String estadoPublicacion[],
+            String pais[], String departamento[]
     ) throws IOException {
 
         String outputFile = "C:/Users/user/Google Drive/Detalle_Carro_busco/bd_caracteristicas_carro_busco.csv";
@@ -59,6 +60,8 @@ public class ExportarCSV {
         csvOutput.write("monedaSimbolo");
         csvOutput.write("fecha");
         csvOutput.write("estadoPublicacion");
+        csvOutput.write("pais");
+        csvOutput.write("departamento");
 
         csvOutput.endRecord();
 
@@ -88,6 +91,8 @@ public class ExportarCSV {
                 csvOutput.write(monedaSimbolo[j]);
                 csvOutput.write(fecha[j]);
                 csvOutput.write(estadoPublicacion[j]);
+                csvOutput.write(pais[j]);
+                csvOutput.write(departamento[j]);
 
                 csvOutput.endRecord();
 

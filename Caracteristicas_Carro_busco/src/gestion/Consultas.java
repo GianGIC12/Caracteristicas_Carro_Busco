@@ -19,9 +19,8 @@ public class Consultas {
     String sql;
     String[] kilometraje, motor, estado, marca, modelo, anio, combustible, transmision,
             timon, traccion, estilo, cilindros, trenManejo, chasis, color, asientos;
-    String[] subCategoria, monedaSimbolo, fecha, estadoPublicacion,pais,departamento;
-    
-    
+    String[] subCategoria, monedaSimbolo, fecha, estadoPublicacion, pais, departamento;
+
     float[] precio;
 
     public Consultas() {
@@ -51,7 +50,7 @@ public class Consultas {
         estadoPublicacion = new String[100000];
         pais = new String[100000];
         departamento = new String[100000];
-        
+
     }
 
     public void iniciar() {
@@ -147,7 +146,6 @@ public class Consultas {
 
         }
 
-       
         objCon.desconectar();
 
     }
@@ -211,24 +209,140 @@ public class Consultas {
 
             precio[idAviso] = rs.getFloat("precio");
             monedaSimbolo[idAviso] = rs.getString("moneda_simbolo");
-            
-            String fechita="";
-            if (rs.getString("fchPublicacion")!=null) {
-               
-         fechita=rs.getString("fchPublicacion").substring(0,10);
-            
-            System.out.println(""+fechita+"*******************");
-               
+
+            String fechita = "";
+            if (rs.getString("fchPublicacion") != null) {
+
+                fechita = rs.getString("fchPublicacion").substring(0, 10);
+
+                System.out.println("" + fechita + "*******************");
+
             }
-          
+
             fecha[idAviso] = fechita;
-            
-            
-            
-            
-            
-            pais[idAviso]=rs.getInt("idPais")+"";
-            departamento[idAviso]=rs.getInt("idDpto")+"";
+
+            String paises = "";
+
+            if (rs.getInt("idPais") == 1) {
+
+                paises = "Nicaragua";
+
+            } else if (rs.getInt("idPais") == 38) {
+
+                paises = "Costa Rica";
+
+            } else {
+
+                paises = "No definido";
+
+            }
+
+            String departamentos = "";
+
+            if (rs.getInt("idDpto") == 1) {
+
+                departamentos = "Carazao";
+
+            } else if (rs.getInt("idDpto") == 2) {
+
+                departamentos = "Chinandega";
+
+            } else if (rs.getInt("idDpto") == 3) {
+
+                departamentos = "Granada";
+
+            } else if (rs.getInt("idDpto") == 4) {
+
+                departamentos = "Leon";
+
+            } else if (rs.getInt("idDpto") == 5) {
+
+                departamentos = "Managua";
+
+            } else if (rs.getInt("idDpto") == 6) {
+
+                departamentos = "Masaya";
+
+            } else if (rs.getInt("idDpto") == 7) {
+
+                departamentos = "Rivas";
+
+            } else if (rs.getInt("idDpto") == 8) {
+
+                departamentos = "Boaco";
+
+            } else if (rs.getInt("idDpto") == 9) {
+
+                departamentos = "Chontales";
+
+            } else if (rs.getInt("idDpto") == 10) {
+
+                departamentos = "Esteli";
+
+            } else if (rs.getInt("idDpto") == 11) {
+
+                departamentos = "Jinotega";
+
+            } else if (rs.getInt("idDpto") == 12) {
+
+                departamentos = "Madriz";
+
+            } else if (rs.getInt("idDpto") == 13) {
+
+                departamentos = "Matagalpa";
+
+            } else if (rs.getInt("idDpto") == 14) {
+
+                departamentos = "Nueva Segobia";
+
+            } else if (rs.getInt("idDpto") == 15) {
+
+                departamentos = "Rio San Juan";
+
+            } else if (rs.getInt("idDpto") == 16) {
+
+                departamentos = "Caribe Norte";
+
+            } else if (rs.getInt("idDpto") == 17) {
+
+                departamentos = "Caribe Sur";
+
+            } else if (rs.getInt("idDpto") == 18) {
+
+                departamentos = "Alajuela";
+
+            } else if (rs.getInt("idDpto") == 19) {
+
+                departamentos = "Cartago";
+
+            } else if (rs.getInt("idDpto") == 20) {
+
+                departamentos = "Guanacaste";
+
+            } else if (rs.getInt("idDpto") == 21) {
+
+                departamentos = "Heredia";
+
+            } else if (rs.getInt("idDpto") == 22) {
+
+                departamentos = "Limon";
+
+            } else if (rs.getInt("idDpto") == 23) {
+
+                departamentos = "Puntarenas";
+
+            } else if (rs.getInt("idDpto") == 24) {
+
+                departamentos = "San Jose";
+
+            } else {
+
+                departamentos = "No Definido";
+
+            }
+
+            pais[idAviso] = paises;
+            departamento[idAviso] = departamentos;
 
         }
         /**
@@ -287,7 +401,7 @@ public class Consultas {
                         + ";" + transmision[i] + ";" + timon[i] + ";" + traccion[i] + ";" + estilo[i] + ";"
                         + cilindros[i] + ";" + trenManejo[i] + ";" + chasis[i]
                         + ";" + precio[i] + ";" + monedaSimbolo[i] + ";" + fecha[i] + ";" + estadoPublicacion[i]
-                        +";" + pais[i] + ";" + departamento[i]
+                        + ";" + pais[i] + ";" + departamento[i]
                 );
 
             }
@@ -487,11 +601,5 @@ public class Consultas {
     public void setDepartamento(String[] departamento) {
         this.departamento = departamento;
     }
-    
-    
-    
-    
-    
-    
 
 }

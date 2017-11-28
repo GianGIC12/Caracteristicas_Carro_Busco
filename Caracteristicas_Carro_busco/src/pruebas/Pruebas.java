@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package pruebas;
 
 import archivos.ExportarCSV;
@@ -23,27 +22,25 @@ public class Pruebas {
      */
     public static void main(String[] args) throws SQLException, IOException {
         // TODO code application logic here
-        
-        Consultas c= new Consultas();
-        
+
+        Consultas c = new Consultas();
+
         c.iniciar();
-        
+
         c.completarCaracteristicas();
         c.completarPrecios();
-        
+
         c.mostrarVehiculos();
-        
-        ExportarCSV ex= new ExportarCSV();
-        
-       ex.exportarResultados(c.getSubCategoria(),c.getMarca(),c.getModelo(), c.getAnio(), 
-               c.getEstado(),c.getColor(), c.getCombustible(),c.getKilometraje(),c.getColor(), 
-               c.getAsientos(),c.getTransmision(), c.getTimon(),c.getTraccion(),c.getEstilo(), 
-               c.getCilindros(),c.getTrenManejo(),c.getChasis(),c.getPrecio(), 
-               c.getMonedaSimbolo(), c.getFecha(), c.getEstadoPublicacion());
-        
-        
-       
-       
+
+        ExportarCSV ex = new ExportarCSV();
+
+        ex.exportarResultados(c.getSubCategoria(), c.getMarca(), c.getModelo(), c.getAnio(),
+                c.getEstado(), c.getColor(), c.getCombustible(), c.getKilometraje(), c.getColor(),
+                c.getAsientos(), c.getTransmision(), c.getTimon(), c.getTraccion(), c.getEstilo(),
+                c.getCilindros(), c.getTrenManejo(), c.getChasis(), c.getPrecio(),
+                c.getMonedaSimbolo(), c.getFecha(), c.getEstadoPublicacion(),
+                c.getPais(), c.getDepartamento());
+
     }
-    
+
 }
