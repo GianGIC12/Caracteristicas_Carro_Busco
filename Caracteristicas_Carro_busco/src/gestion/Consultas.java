@@ -19,7 +19,9 @@ public class Consultas {
     String sql;
     String[] kilometraje, motor, estado, marca, modelo, anio, combustible, transmision,
             timon, traccion, estilo, cilindros, trenManejo, chasis, color, asientos;
-    String[] subCategoria, monedaSimbolo, fecha, estadoPublicacion;
+    String[] subCategoria, monedaSimbolo, fecha, estadoPublicacion,pais,departamento;
+    
+    
     float[] precio;
 
     public Consultas() {
@@ -47,7 +49,9 @@ public class Consultas {
         fecha = new String[100000];
         precio = new float[100000];
         estadoPublicacion = new String[100000];
-
+        pais = new String[100000];
+        departamento = new String[100000];
+        
     }
 
     public void iniciar() {
@@ -77,6 +81,8 @@ public class Consultas {
             fecha[i] = "";
             precio[i] = 0.0f;
             estadoPublicacion[i] = "";
+            pais[i] = "";
+            departamento[i] = "";
 
         }
 
@@ -141,27 +147,7 @@ public class Consultas {
 
         }
 
-        /**
-         * for (int i = 0; i < 100000; i++) {
-         *
-         * if (marca[i].equalsIgnoreCase("")) {
-         *
-         * }else{
-         *
-         *
-         * System.out.println(i+","+marca[i]+","+modelo[i]+","+anio[i]+","+estado[i]+","+color[i]
-         * +","+combustible[i]+","+kilometraje[i]+","+motor[i]+","+asientos[i]
-         * +","+transmision[i]+","+timon[i]+","+traccion[i]+","+estilo[i]+","
-         * +cilindros[i]+","+trenManejo[i]+","+chasis[i]);
-         *
-         * }
-         *
-         *
-         *
-         *
-         * }
-         *
-         */
+       
         objCon.desconectar();
 
     }
@@ -172,7 +158,7 @@ public class Consultas {
 
         objCon.conectar();
 
-        sql = "select id,idSubcategoria,precio,moneda_simbolo,fchPublicacion,estado from db_todobusco_prod.mod_aviso_aviso where idCategoria=2";
+        sql = "select id,idSubcategoria,precio,moneda_simbolo,fchPublicacion,estado,idPais,idDpto from db_todobusco_prod.mod_aviso_aviso where idCategoria=2";
 
         PreparedStatement stm = objCon.getCon().prepareStatement(sql);
 
@@ -236,6 +222,13 @@ public class Consultas {
             }
           
             fecha[idAviso] = fechita;
+            
+            
+            
+            
+            
+            pais[idAviso]=rs.getInt("idPais")+"";
+            departamento[idAviso]=rs.getInt("idDpto")+"";
 
         }
         /**
@@ -294,6 +287,7 @@ public class Consultas {
                         + ";" + transmision[i] + ";" + timon[i] + ";" + traccion[i] + ";" + estilo[i] + ";"
                         + cilindros[i] + ";" + trenManejo[i] + ";" + chasis[i]
                         + ";" + precio[i] + ";" + monedaSimbolo[i] + ";" + fecha[i] + ";" + estadoPublicacion[i]
+                        +";" + pais[i] + ";" + departamento[i]
                 );
 
             }
@@ -476,6 +470,22 @@ public class Consultas {
 
     public void setPrecio(float[] precio) {
         this.precio = precio;
+    }
+
+    public String[] getPais() {
+        return pais;
+    }
+
+    public void setPais(String[] pais) {
+        this.pais = pais;
+    }
+
+    public String[] getDepartamento() {
+        return departamento;
+    }
+
+    public void setDepartamento(String[] departamento) {
+        this.departamento = departamento;
     }
     
     
