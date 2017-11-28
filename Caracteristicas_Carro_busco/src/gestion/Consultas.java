@@ -217,6 +217,10 @@ public class Consultas {
 
                 System.out.println("" + fechita + "*******************");
 
+            }else {
+                
+                fechita="1900-01-01";
+                
             }
 
             fecha[idAviso] = fechita;
