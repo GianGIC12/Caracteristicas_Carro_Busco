@@ -225,7 +225,17 @@ public class Consultas {
 
             precio[idAviso] = rs.getFloat("precio");
             monedaSimbolo[idAviso] = rs.getString("moneda_simbolo");
-            fecha[idAviso] = rs.getString("fchPublicacion");
+            
+            String fechita="";
+            if (rs.getString("fchPublicacion")!=null) {
+               
+         fechita=rs.getString("fchPublicacion").substring(0,10);
+            
+            System.out.println(""+fechita+"*******************");
+               
+            }
+          
+            fecha[idAviso] = fechita;
 
         }
         /**
