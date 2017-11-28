@@ -35,7 +35,7 @@ public class Pruebas {
         ExportarCSV ex = new ExportarCSV();
 
         ex.exportarResultados(c.getSubCategoria(), c.getMarca(), c.getModelo(), c.getAnio(),
-                c.getEstado(), c.getColor(), c.getCombustible(), c.getKilometraje(), c.getColor(),
+                c.getEstado(), c.getColor(), c.getCombustible(), c.getKilometraje(), c.getMotor(),
                 c.getAsientos(), c.getTransmision(), c.getTimon(), c.getTraccion(), c.getEstilo(),
                 c.getCilindros(), c.getTrenManejo(), c.getChasis(), c.getPrecio(),
                 c.getMonedaSimbolo(), c.getFecha(), c.getEstadoPublicacion(),
